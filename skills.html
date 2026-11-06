@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Rahul Biswas</title>
+  <meta name="description" content="Rahul Biswas – Creative Editor, Content Creator and Storyteller. Video editing, content writing, thumbnail design and more." />
+  <meta name="theme-color" content="#5b21b6" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Apply saved theme before paint (avoids flash) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95'
+            },
+            ink: { 700: '#374151', 800: '#1f2937', 900: '#111827', 950: '#0b0f19' }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-ink-800 dark:bg-ink-900 dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-tight">
+        <span class="text-brand-800 dark:text-brand-300">RB</span><span class="text-ink-800 dark:text-white">CreateX</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-1" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link active">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark / light mode"
+          class="w-10 h-10 grid place-items-center rounded-full bg-brand-100 text-brand-800 hover:bg-brand-200 dark:bg-ink-800 dark:text-brand-300 dark:hover:bg-ink-700 transition">
+          <svg id="icon-moon" class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg id="icon-sun" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4l1.4-1.4"/></svg>
+        </button>
+
+        <!-- Hamburger -->
+        <button id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+          class="md:hidden w-10 h-10 grid place-items-center rounded-full bg-brand-100 text-brand-800 dark:bg-ink-800 dark:text-brand-300">
+          <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-5 pb-4">
+      <ul class="rounded-2xl bg-white/95 dark:bg-ink-800/95 backdrop-blur shadow-xl border border-brand-100 dark:border-ink-700 p-2 flex flex-col">
+        <li><a href="index.html" class="nav-link block">Home</a></li>
+        <li><a href="about.html" class="nav-link block">About</a></li>
+        <li><a href="skills.html" class="nav-link block active">Skills</a></li>
+        <li><a href="projects.html" class="nav-link block">Projects</a></li>
+        <li><a href="experience.html" class="nav-link block">Experience</a></li>
+        <li><a href="contact.html" class="nav-link block">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+<section id="skills" class="section page-top bg-brand-50/60 dark:bg-ink-950/60">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center mb-14 reveal">
+          <p class="section-tag">My Skills</p>
+          <h2 class="section-title">My skill</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-6" id="skill-list">
+          <div class="reveal skill" data-level="95">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Video Editing</span><span class="skill-pct">95%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="85">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Content Writing</span><span class="skill-pct">85%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="90">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Storytelling</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="92">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Adobe Premiere Pro</span><span class="skill-pct">92%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="90">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>CapCut</span><span class="skill-pct">90%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="80">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Photoshop</span><span class="skill-pct">80%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="88">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Thumbnail Design</span><span class="skill-pct">88%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="reveal skill" data-level="82">
+            <div class="flex justify-between mb-2 text-sm font-medium"><span>Color Grading & Sound Sync</span><span class="skill-pct">82%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="reveal mt-12 flex flex-wrap justify-center gap-3">
+          <span class="chip">Premiere Pro</span>
+          <span class="chip">CapCut</span>
+          <span class="chip">Photoshop</span>
+          <span class="chip">Scriptwriting</span>
+          <span class="chip">Short-form Video</span>
+          <span class="chip">YouTube SEO</span>
+          <span class="chip">Motion Basics</span>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink-900 dark:bg-ink-950 text-gray-300">
+    <div class="max-w-6xl mx-auto px-5 py-12 flex flex-col items-center gap-6 text-center">
+      <a href="index.html" class="text-2xl font-extrabold"><span class="text-brand-300">RB</span><span class="text-white">CreateX</span></a>
+      <p class="text-sm text-gray-400">Creative Editor | Content Creator | Storyteller</p>
+
+      <!-- Social links (YouTube আসল লিংক; বাকিগুলোর # বদলে নিজের লিংক দিন) -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.youtube.com/@RBCreateX" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-icon social-youtube">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.5 9.9v-7H7.9V12h2.6V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/yours_person1k" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.8h4V21H3zM9.5 9.8h3.8v1.6h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/></svg>
+        </a>
+      </div>
+
+      <p class="text-xs text-gray-500">© <span id="year"></span> Rahul Biswas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brand-800 text-white shadow-lg grid place-items-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-brand-600">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
